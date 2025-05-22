@@ -1,0 +1,230 @@
+// Your variable overrides
+@import "./darkThemeVariables";
+
+$dark-bg: #000;
+$body-bg: $global-bg-color;
+$body-color: $global-font-color;
+
+// @import "~bootstrap-darkmode/scss/darktheme.scss";
+// Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap";
+
+// Custom overrides
+@import "./lib-customizations/RRTCustomStyles.scss";
+@import "./lib-customizations/CustomBootstrapStyles.scss";
+
+// Module imports
+@import "./PlayerHighlights.module.scss";
+@import "./Home.module.scss";
+// @import "./Header.module.scss";
+// @import "./Login.module.scss";
+
+:root {
+  /* Your default theme */
+  --background: $global-bg-color !important;
+  --foreground: $global-font-color !important;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-size: $global-base-font-size;
+  color: $global-font-color !important;
+  background: $global-bg-color !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main-container {
+  // min-height: 85vh;
+  max-width: 1274px;
+  margin: 0 auto;
+}
+
+.blive-responsive-iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: transparent;
+}
+
+.blive_iframe,
+.blive_iframe_responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fullPageLoaderContainer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  opacity: 0.5;
+  z-index: 99999;
+}
+
+.fullPageLoader {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 99999;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    color: $global-font-color !important;
+    background: $global-bg-color !important;
+  }
+}
+
+.default-font-size {
+  font-size: $global-base-font-size !important;
+}
+
+.default-bolder-font-size {
+  font-size: $bolder-font-size !important;
+}
+
+.flex-top-center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.flex-middle-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-middle-left {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.flex-middle-right {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.dark-bg-font-color {
+  color: $body-color !important;
+}
+
+.text-danger-on-grey {
+  color: #ff6f00 !important;
+}
+
+.prevent-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.not-available {
+  color: #6e0606;
+  cursor: not-allowed;
+}
+
+.font-yellow {
+  color: yellow !important;
+}
+
+.disabled-btn {
+  color: #333 !important;
+  cursor: default !important;
+}
+
+.activeBtn {
+  cursor: pointer;
+}
+
+.disableOverlay {
+  cursor: default;
+  background-color: #444444;
+  opacity: 15%;
+}
+
+.disableBtnOverlay {
+  cursor: default;
+  // background-color: #000;
+  opacity: 40%;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: yellow;
+  color: black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.error-icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.error-text {
+  margin: 0;
+}

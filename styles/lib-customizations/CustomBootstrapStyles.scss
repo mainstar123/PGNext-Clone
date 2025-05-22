@@ -1,0 +1,24 @@
+// custom bootstrap colors
+.popover-body {
+  color: #efefef !important;
+  background-color: $--bs-popover-bg !important;
+}
+
+.popover-header {
+  background-color: $--bs-popover-header-bg !important;
+}
+
+.btn {
+  font-size: $global-base-font-size;
+}
+
+.modal-content {
+  background-color: $report-problem-bg-color !important;
+  color: $global-font-color !important;
+  // .modal-header .btn-close {
+  //   background-color: $grey-bg;
+  // }
+}
+.modal-header {
+  border-bottom-color: $dark-mode-border-color !important;
+}

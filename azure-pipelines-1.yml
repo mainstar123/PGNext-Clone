@@ -1,0 +1,20 @@
+trigger: none  # Prevents automatic triggering, run manually
+
+pool:
+  vmImage: 'ubuntu-latest'  # Use a Microsoft-hosted agent
+
+steps:
+- task: DownloadSecureFile@1
+  name: mySecureFile
+  displayName: 'Download Secure File'
+  inputs:
+    secureFile: '.env.dev'  # Change this to your actual file name
+
+- script: cat $(mySecureFile.secureFilePath)
+  displayName: 'Display File Contents'  # Shows file contents in the logs
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(mySecureFile.secureFilePath)'
+    artifact: 'SecureFile'
+    publishLocation: 'pipeline'

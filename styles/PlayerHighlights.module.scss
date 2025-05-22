@@ -1,0 +1,595 @@
+@import "./darkThemeVariables.scss";
+
+// .player-container {
+// align-content: flex-start;
+// align-items: flex-start;
+// display: flex;
+// flex-direction: column;
+// }
+.player-highlights-container {
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
+  // box-shadow: 0 0 8px 1px;
+  // border-radius: 8px;
+  // overflow: hidden;
+}
+
+.jw-player-wrapper {
+  position: relative;
+  padding-top: 0%;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// .react-player:hover {
+// }
+
+.player-overlay-wrapper {
+  position: absolute;
+  // height: 100%;
+  width: 100%;
+  .player-overlay-report-problem {
+    position: absolute;
+    bottom: 2%;
+    font-size: $global-base-font-size;
+    color: $global-font-color;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+
+    & a {
+      // text-decoration: none;
+      // color: $global-font-color;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      padding: 1px 10px 2px;
+    }
+  }
+}
+
+.report-problem-wrapper {
+  background-color: $report-problem-bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $global-base-font-size;
+  min-height: 25em;
+}
+
+.report-problem-players-list-by-team {
+  .tab-pane {
+    padding: 0.5rem;
+  }
+  .nav-tabs {
+    .nav-link {
+      color: #ccc;
+      background-color: $dark-grey;
+      border-color: $global-border-color;
+
+      &.active {
+        background-color: $global-bg-color !important;
+        border-color: $global-border-color;
+        color: $global-font-color;
+        font-weight: 500;
+      }
+
+      &:hover {
+        border-color: $global-border-color;
+        background-color: $global-bg-color !important;
+        color: $global-font-color;
+        font-weight: 500;
+      }
+    }
+  }
+  .tab-content {
+    padding-top: 0.5rem;
+    background-color: $dark-grey;
+  }
+}
+.react-time-picker__inputGroup__leadingZero,
+.react-time-picker__inputGroup__divider {
+  font-size: 27px;
+}
+
+.react-time-picker input {
+  font-size: 2em;
+}
+.react-time-picker__wrapper {
+  padding: 0.5em 1em;
+}
+
+// .gr-icon path {
+//   // stroke: rgb(239, 0,0);
+// }
+
+.rp-clip-forward-backward-controls {
+  // font-size: 3em;
+  color: black !important;
+  .rp-clip-forward-backward-control-digit {
+    grid-area: 1/1;
+    margin: 0.5em auto 0;
+    color: $global-font-color;
+    font-size: 2.4em;
+    font-weight: 600;
+  }
+}
+
+// .player-overlay {
+//   // Aligns the content to to the center of the player
+//   position: absolute;
+//   bottom: 48%;
+//   left: 48%;
+//   z-index: 10000;
+//   color: white;
+//   // height: 100px;
+// }
+
+.playing-video-details {
+  padding: 5px;
+}
+
+// .controlsWrapper {
+//   position: relative;
+// }
+
+// .playerSeekBarContainer {
+//   margin-top: -5.5em;
+//   width: 100%;
+//   padding: 15px;
+//   background: transparent;
+//   border-radius: 20px;
+//   display: flex;
+//   align-items: center;
+//   box-shadow: 0px 15px 40px #7e6d5766;
+// }
+
+// .playerSeekBar {
+//   width: 100%;
+//   // margin-top: -2.4em;
+//   // border-radius: 0!important;
+//   background: rgba(0, 0, 0, 0.3);
+//   // cursor: pointer;
+// }
+// .playlist-container {
+//   height: 100%;
+//   transform: translate(0, 50%);
+// }
+
+.tabs-wrapper {
+  position: relative;
+
+  // flex-wrap: nowrap;
+  // align-items: center;
+  // background-color: #313131;
+}
+
+.RRT-tab {
+  font-weight: 600;
+  font-size: $bolder-font-size;
+  // color: #0d6efd;
+  // margin-left: 2px;
+  // margin-right: 2px;
+  // margin-bottom: 5px;
+  // border-radius: 10px;
+  // background-color: $global-bg-color !important;
+}
+
+.playlist {
+  padding: 0;
+  // max-height: 56.5vh;
+  max-height: 25.7em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.InfiniteBoxHeight {
+  max-height: 25.7em;
+}
+
+.playlist-sort-icon {
+  padding-right: 0;
+  padding-top: 0.2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.video-thumbnail-card {
+  text-align: center;
+  font-size: $global-base-font-size;
+  max-height: 100px;
+  padding: 5px 5px 5px 14px;
+  margin-right: 5px;
+  border-bottom: 1px solid $dark-grey;
+}
+.padright {
+  padding-right: 5px;
+}
+
+.video-thumbnail-and-title {
+  cursor: pointer;
+}
+
+.video-thumbnail-card:first-child {
+  margin-top: 0.2em;
+}
+
+.video-thumbnail-card:last-child {
+  margin-bottom: 0.3em;
+}
+
+.playing-video-card {
+  //box-shadow: 0 0 6px 0 white; //$pg-highlight-color;
+  background-color: #444;
+}
+
+.greyed-text {
+  color: #999;
+}
+
+// .controls {
+//   padding: 5px 10px;
+// }
+
+// .playingVideoDuration {
+//   background: rgba(0, 0, 0, 0.8);
+//   padding: 2px 5px;
+//   color: white;
+//   float: right;
+// }
+
+.thumbnail-wrapper {
+  position: relative;
+  max-height: 55px;
+  // height: 100px;
+  // width: 150px;
+}
+
+.thumbnail-img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.icon-wrapper-favorite {
+  transition: all 1s ease-in;
+  .icons-favorite {
+    font-size: 1.5em;
+    margin-left: -5px;
+  }
+  .icon-color-favorite {
+    color: #ff0066; //#ff008a;
+  }
+}
+
+// on thumbnails
+// .video-duration {
+//   color: white;
+//   background: rgba(0, 0, 0, 0.6);
+//   padding: 1px 5px 2px;
+//   border-radius: 6px;
+//   text-align: center;
+//   font-size: 0.75rem;
+//   position: absolute;
+//   bottom: 4%;
+//   right: 4%;
+// }
+
+.video-duration-on-card {
+  padding: 2px;
+}
+
+.report-problem-btn {
+  border-radius: 0px !important;
+  padding-top: 0.1em;
+  padding-bottom: 0.2em;
+  min-width: 10em;
+  font-family: source-sans-pro !important;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1 1 50%;
+}
+
+@media (max-width: 767px) {
+  .item {
+    flex-basis: 100%;
+  }
+}
+
+.follow-icon {
+  color: #2763a5;
+  font-size: 1.5em;
+}
+
+@media (max-width: 991px) {
+  .playlist {
+    // max-height: 51vh;
+    max-height: 18em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .InfiniteBoxHeight {
+    max-height: 18em;
+  }
+}
+
+@media (min-width: 980px) {
+  // .RRT-tab {
+  //   padding: 0.7em 1.2em !important;
+  // }
+}
+
+@media (min-width: 780px) {
+  .thumbnail-wrapper {
+    // padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 780px) {
+  .player-highlights-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  // .playerSeekBarContainer {
+  //   margin-top: -4em;
+  // }
+
+  .tabs-wrapper {
+    // min-width: 500px;
+    margin-top: 1.5em;
+  }
+
+  .playlist {
+    // overflow: visible;
+    // max-height: fit-content;
+    max-height: 15em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .InfiniteBoxHeight {
+    max-height: 15em;
+  }
+
+  .playlist-sort-icon {
+    padding-right: 0;
+  }
+
+  .video-thumbnail-card {
+    padding: 5px 0px 5px 5px;
+  }
+
+  .thumbnail-wrapper {
+    padding-right: 0;
+  }
+
+  .thumbnail-img {
+    padding-left: 0.5rem;
+  }
+
+  .report-problem-wrapper {
+    background-color: #444;
+  }
+}
+
+.dksub_outer {
+  color: white;
+  background-color: black;
+  padding: 10px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.dksub_outer .title_lg {
+  font-family: Countach;
+  font-weight: bold;
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dksub_outer .description {
+  font-family: Countach;
+  font-size: 20px;
+  display: block;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 0px;
+}
+.dksub_outer .case {
+  background-color: white;
+  border-radius: 7px;
+  padding: 10px;
+  color: black;
+  font-family: source-sans-pro;
+  text-align: left;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.dksub_outer .case ul {
+  margin-left: 20px;
+  padding: 0;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+.dksub_outer .pricing_pre {
+  font-family: Countach;
+  font-weight: bold;
+  font-size: 27px;
+  vertical-align: super;
+}
+.dksub_outer .pricing {
+  font-family: Countach;
+  font-weight: bold;
+  font-size: 40px;
+}
+.dksub_outer .pricing_post {
+  font-family: Countach;
+  font-weight: bold;
+  font-size: 20px;
+}
+.dksub_outer .pricing_note {
+  color: #a7a8a9;
+  display: block;
+  font-size: 12px;
+  margin-bottom: 15px;
+  margin-top: -10px;
+}
+.dksub_outer .levels {
+  background-color: #00b451;
+  color: white;
+  font-family: Countach;
+  font-size: 20px;
+  display: inline-block;
+  padding: 0px 45px;
+  position: absolute;
+  margin-top: -30px;
+  left: 20%;
+  right: 20%;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.54);
+  line-height: 24px;
+}
+
+.dksub_outer .logo {
+  margin-top: 20px;
+}
+
+.dksub_outer .title_bottom {
+  font-family: Countach;
+  font-weight: bold;
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.dksub_outer .bottominfo ul {
+  margin-left: 20px;
+  padding: 0;
+  text-align: left;
+  font-family: Countach;
+  font-weight: lighter;
+}
+
+.dksub_outer .buttonFont {
+  font-family: Countach;
+  font-weight: bold;
+}
+
+.dksub_outer .buttonWhite {
+  background-color: white;
+}
+.dksub_outer .nomargin {
+  margin-bottom: 0px !important;
+}
+.blackBack {
+  background-color: black !important;
+  color: white !important;
+  border: solid 1px #a7a8a9 !important;
+}
+.whiteText {
+  color: white !important;
+}
+.modal-header .btn-close {
+  background-color: white !important;
+}
+
+.dksub_outer .dksubtabs {
+  margin-left: 0px !important;
+  font-size: 12px !important;
+  width: 100% !important;
+}
+
+.DKtabcontainer {
+  text-align: center !important;
+}
+
+.tabcont ul li {
+  display: inline-block !important;
+  *display: inline !important;
+}
+
+.TeamAndScore {
+  width: 100%;
+}
+
+.TeamAndScore td:nth-child(1) {
+  border: solid 1px white;
+  text-align: center;
+  padding: 5px;
+  width: 37px;
+  background-color: #444444;
+}
+
+.TeamAndScore td:nth-child(2) {
+  border: solid 1px white;
+  padding: 5px;
+  background: rgb(68, 68, 68);
+  background: linear-gradient(
+    90deg,
+    rgba(68, 68, 68, 1) 0%,
+    rgba(45, 45, 45, 1) 73%,
+    rgba(31, 31, 31, 1) 100%
+  );
+}
+
+.TeamAndScore a {
+  color: white;
+  text-decoration: none;
+}
+
+.TeamAndScore a:hover {
+  color: #a7a8a9;
+}
+
+.CenterText {
+  text-align: center;
+}
+
+.yellow-link {
+  color: yellow;
+}

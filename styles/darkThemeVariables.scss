@@ -1,0 +1,24 @@
+// Common SCSS variables
+$pg-highlight-color: #02f;
+
+// dark theme SCSS variables
+$global-base-font-size: 13px;
+$bolder-font-size: 14px;
+
+$global-font-color: #fefefe;
+$dark-grey-bg-color: rgb(15, 15, 15); // #0f0f0f; //#111;
+$global-bg-color: rgb(0, 0, 0); 
+$dark-grey: #333;
+$global-border-color: #666;
+$grey-bg: #999;
+$dark-mode-border-color: #666;
+$report-problem-bg-color: #444;
+
+// bootstrap variables
+// $--bs-body-color: $global-font-color;
+// $--bs-body-bg: $global-bg-color;
+
+$--bs-popover-header-bg: $global-bg-color;
+$--bs-popover-bg: $dark-grey;
+
+$--bs-btn-font-size: $global-base-font-size;

@@ -1,0 +1,64 @@
+# Development pipeline
+
+trigger:
+  branches:
+    include:
+      - dev
+      - main
+  paths:
+    exclude:
+      - README.md
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
+    EnvironmentName: "prod"
+  ${{ else }}:
+    EnvironmentName: "dev"
+
+steps:
+  # # Azure Login - Add this step here to authenticate before deployment
+  # - script: |
+  #     echo "Client ID: $(AZURE_CLIENT_ID)"
+  #     echo "Tenant ID: $(AZURE_TENANT_ID)"
+  #     az login --service-principal -u $(AZURE_CLIENT_ID) -p $(AZURE_CLIENT_SECRET) --tenant $(AZURE_TENANT_ID) --debug
+  #   displayName: "Azure Login with Debug"
+  - script: |
+      echo "Printing all environment variables:"
+      printenv
+    displayName: "Print Environment Variables V2"
+  
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "16.x"
+    displayName: "Install Node.js"
+
+  - task: DownloadSecureFile@1
+    name: envSecureFile
+    displayName: "Download env file for $(EnvironmentName) from library"
+    inputs:
+      secureFile: ".env.$(EnvironmentName)"
+
+  - script: |
+      cp $(envSecureFile.secureFilePath) $(Build.SourcesDirectory)/.env
+    displayName: "Copy env file for [$(EnvironmentName)]"
+
+  - script: |
+      npm install --legacy-peer-deps
+    displayName: "npm install"
+
+  - script: |
+      npm run build
+    displayName: "npm build"
+
+  - script: |
+      zip -r --symlinks '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' .
+    displayName: "Archive files"
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: $(Build.ArtifactStagingDirectory)
+      ArtifactName: "PerfectGame-Diamondkast-NextJS-$(Build.SourceBranchName)-build-$(Build.BuildNumber)"
+    displayName: "Publishing the Artifact"
